@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTS_Web2_Hamidah</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { darkMode: 'class' }
+    </script>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 transition-colors duration-300">
+
+    <section id="auth-page" class="fixed inset-0 bg-white dark:bg-slate-900 z-[100] flex items-center justify-center p-4">
+        <div class="w-full max-w-md p-8 border dark:border-slate-700 rounded-3xl shadow-2xl bg-white dark:bg-slate-800">
+            <h2 class="text-3xl font-black text-center mb-2 text-indigo-600 tracking-tighter">CRASCO.</h2>
+            <p class="text-slate-400 text-center text-sm mb-8 italic">Masuk atau daftar akun baru</p>
+            <form id="auth-form" class="space-y-4">
+                <input type="email" id="email" placeholder="Email" class="w-full p-3 border dark:border-slate-700 dark:bg-slate-900 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500" required>
+                <input type="password" id="password" placeholder="Password (Min 6 Karakter)" class="w-full p-3 border dark:border-slate-700 dark:bg-slate-900 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500" minlength="6" required>
+                <button type="submit" class="w-full bg-indigo-600 text-white py-3 rounded-xl font-bold shadow-lg hover:bg-indigo-700 transition">Mulai Belanja</button>
+            </form>
+        </div>
+    </section>
+
+    <div id="shop-page" class="hidden min-h-screen">
+        <nav class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-md shadow-sm border-b dark:border-slate-700 sticky top-0 z-50 p-4">
+            <div class="container mx-auto flex justify-between items-center">
+                <h1 class="text-2xl font-black text-indigo-600">CRASCO.</h1>
+                <div class="flex items-center gap-4">
+                    <button onclick="toggleDark()" class="p-2 bg-slate-100 dark:bg-slate-700 rounded-full">🌓</button>
+                    <input type="text" id="search" placeholder="Cari..." class="hidden md:block p-2 border dark:border-slate-700 dark:bg-slate-900 rounded-full text-xs w-48 px-4">
+                    <button onclick="logout()" class="text-xs font-bold text-red-500">LOGOUT</button>
+                </div>
+            </div>
+        </nav>
+
+        <main class="container mx-auto p-4 md:p-8 grid grid-cols-1 lg:grid-cols-4 gap-8">
+            <div class="lg:col-span-3">
+                <h2 class="text-xl font-bold mb-6 border-l-4 border-indigo-600 pl-3">Katalog Produk</h2>
+                <div id="product-list" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6"></div>
+            </div>
+
+            <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border dark:border-slate-700 h-fit sticky top-24">
+                <h2 class="font-black text-lg mb-6 border-b dark:border-slate-700 pb-4">Keranjang</h2>
+                <div id="cart-items" class="space-y-4 mb-6"></div>
+                <div class="border-t dark:border-slate-700 pt-6">
+                    <div class="flex justify-between font-black text-xl mb-6 text-indigo-600">
+                        <span>Total:</span>
+                        <span id="total-price">Rp 0</span>
+                    </div>
+                    <button id="btn-checkout" onclick="openCheckout()" class="w-full bg-slate-900 dark:bg-indigo-600 text-white py-4 rounded-xl font-bold disabled:opacity-30" disabled>Checkout</button>
+                </div>
+            </div>
+        </main>
+
+        <section class="container mx-auto px-4 md:px-8 mt-12 pb-20">
+            <h2 class="text-xl font-bold mb-6">Riwayat Pesanan</h2>
+            <div id="order-history" class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm"></div>
+        </section>
+    </div>
+
+    <div id="checkout-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center p-4 z-[110]">
+        <div class="bg-white dark:bg-slate-800 p-8 rounded-3xl w-full max-w-md shadow-2xl">
+            <h2 class="text-2xl font-black mb-6 text-indigo-600">Checkout</h2>
+            <form id="checkout-form" class="space-y-4">
+                <input type="text" id="cust-name" placeholder="Nama Lengkap" class="w-full p-3 border dark:border-slate-700 dark:bg-slate-900 rounded-xl" required>
+                <textarea id="cust-address" placeholder="Alamat Lengkap" class="w-full p-3 border dark:border-slate-700 dark:bg-slate-900 rounded-xl" required></textarea>
+                <input type="tel" id="cust-phone" placeholder="No HP" class="w-full p-3 border dark:border-slate-700 dark:bg-slate-900 rounded-xl" required>
+                <div class="flex gap-2">
+                    <button type="button" onclick="closeCheckout()" class="flex-1 py-3 border dark:border-slate-700 rounded-xl">Batal</button>
+                    <button type="submit" class="flex-1 bg-indigo-600 text-white py-3 rounded-xl font-bold">Bayar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

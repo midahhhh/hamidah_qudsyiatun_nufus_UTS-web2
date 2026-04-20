@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Crasco Premium Oversize",
+    "price": 145000,
+    "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=500",
+    "description": "Kaos katun premium dengan potongan oversize yang trendy."
+  },
+  {
+    "id": 2,
+    "name": "Crasco Urban Hoodie",
+    "price": 275000,
+    "image": "https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=500",
+    "description": "Hoodie stylish dengan bahan fleece tebal dan lembut."
+  },
+  {
+    "id": 3,
+    "name": "Crasco Chino Slim",
+    "price": 195000,
+    "image": "https://images.unsplash.com/photo-1473966968600-fa804b86d30b?q=80&w=500",
+    "description": "Celana chino slim-fit yang elastis dan nyaman."
+  },
+  {
+    "id": 4,
+    "name": "Crasco Denim Jacket",
+    "price": 350000,
+    "image": "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?q=80&w=500",
+    "description": "Jaket denim klasik dengan aksen modern."
+  }
+]
