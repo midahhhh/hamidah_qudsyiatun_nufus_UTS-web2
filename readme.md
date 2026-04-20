@@ -21,4 +21,4 @@ Karena proyek ini mengambil data menggunakan *Fetch API* ke file `products.json`
 ## Link Demo (GitHub Pages)
 Aplikasi ini telah di-deploy dan dapat diakses secara online melalui tautan berikut:
 
-👉 **[Demo Crasco Shop di GitHub Pages](https://midahhhh.github.io/hamidahUTSweb2/)**
+👉 **[Demo Crasco Shop di GitHub Pages](https://midahhhh.github.io/hamidah_qudsyiatun_nufus_UTS-web2/)**
